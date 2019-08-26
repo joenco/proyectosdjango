@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <title>{% block title %}Proyectos en Django - Jorge Ortega{% endblock %}</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {# style css --> #}
+    {% load bootstrap4 %}
+        {# CSS Bootstrap #}
+        {% bootstrap_css %}
+    <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    {# script javascript --> #}
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'js/fontawesome.js' %}"></script>
+    {% block head %}
+        {# [Bloque para añadir cualquier tag extra a la cabecera, por ejemplo CSS específico de una página] #}
+    {% endblock %}
+  </head>
+  <body>
+      <p>Página en construcción. Proyectos realizados en Django.</p>
+      {# JS y jQuery Bootstrap #}
+      {% bootstrap_javascript jquery='full' %}
+      {% block scripts %}
+          {# [Para añadir librerías y código javascript extra] #}
+      {% endblock %}
+  </body>
+</html>
